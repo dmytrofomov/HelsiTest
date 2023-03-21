@@ -3,6 +3,7 @@ using HelsiTest.Core.Entities;
 using HelsiTest.Core.Repositories;
 using HelsiTest.Infrastructure.DataAccess.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace HelsiTest.Infrastructure.DataAccess.Repositories.Implementations
 {
@@ -24,8 +25,7 @@ namespace HelsiTest.Infrastructure.DataAccess.Repositories.Implementations
 
         public async Task<bool> CheckPermisstionAsync(int listId, int currentUserId)
         {
-            await CheckUserExistAsync(currentUserId);
-            var result = await _context.UserLists.AnyAsync(x => x.UserId == currentUserId && x.Id == listId);
+            var result = await _context.UserLists.AnyAsync(x => x.UserId == currentUserId && x.ListId == listId);
             if (!result)
             {
                 throw new PermissionDeniedException($"Permission Denied for UserId - {currentUserId}");
@@ -105,7 +105,9 @@ namespace HelsiTest.Infrastructure.DataAccess.Repositories.Implementations
         public async Task<int> UpdateListAsync(ListEntity listEntity, int currentUserId)
         {
             await CheckUserExistAsync(currentUserId);
-            var result = _context.Lists.Update(listEntity);
+            var existedList = await _context.Lists.FirstAsync(x => x.Id == listEntity.Id);
+            existedList.Name= listEntity.Name;
+            var result = _context.Lists.Update(existedList);
             await _context.SaveChangesAsync();
             return result.Entity.Id;
         }
@@ -114,6 +116,9 @@ namespace HelsiTest.Infrastructure.DataAccess.Repositories.Implementations
             await CheckUserExistAsync(currentUserId);
 
             var itemToRemove = await _context.Lists.FirstAsync(x => x.Id == listId);
+
+            if (itemToRemove.OwnerId != currentUserId)
+                throw new PermissionDeniedException($"Permission Denied for UserId - {currentUserId}");
 
             _context.Lists.Remove(itemToRemove);
             await _context.SaveChangesAsync();

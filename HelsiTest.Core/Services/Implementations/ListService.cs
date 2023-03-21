@@ -39,6 +39,7 @@ namespace HelsiTest.Core.Services.Implementations
 
         public async Task<int> UpdateListAsync(ListEntity listEntity, int currentUserId)
         {
+            await _listRepo.CheckPermisstionAsync(listEntity.Id, currentUserId);
             return await _listRepo.UpdateListAsync(listEntity, currentUserId);
         }
 

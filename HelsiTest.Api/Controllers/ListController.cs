@@ -49,7 +49,7 @@ namespace HelsiTest.Api.Controllers
         }
 
         [HttpPut(template: "/{currentUserId}")]
-        public async Task<int> UpdateList([FromBody] AddListRequest addListDto, int currentUserId)
+        public async Task<int> UpdateList([FromBody] UpdateListRequest addListDto, int currentUserId)
         {
             var mappedEntity = _mapper.Map<ListEntity>(addListDto);
             return await _listService.UpdateListAsync(mappedEntity, currentUserId);
@@ -68,7 +68,7 @@ namespace HelsiTest.Api.Controllers
         }
 
         [HttpPost(template: "/item/{currentUserId}")]
-        public async Task<int> AddItemToList([FromBody] AddListRequest addItemDto, int currentUserId)
+        public async Task<int> AddItemToList([FromBody] AddItemRequest addItemDto, int currentUserId)
         {
             var mappedEntity = _mapper.Map<ItemEntity>(addItemDto);
             return await _listService.AddItemToListAsync(mappedEntity, currentUserId);

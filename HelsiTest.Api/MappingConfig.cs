@@ -3,7 +3,7 @@ using HelsiTest.Api.DTOs.Request;
 using HelsiTest.Api.DTOs.Responce;
 using HelsiTest.Core.Entities;
 
-namespace DB
+namespace HelsiTest.Api
 {
     public class MappingConfig
     {
@@ -13,7 +13,8 @@ namespace DB
             {
                 c.CreateMap<AddUserRequest, UserEntity>();
                 c.CreateMap<AddListRequest, ListEntity>();
-                c.CreateMap<AddListRequest, ItemEntity>();
+                c.CreateMap<UpdateListRequest, ListEntity>();
+                c.CreateMap<AddItemRequest, ItemEntity>();
 
                 c.CreateMap<UserEntity, UserResponse>();
                 c.CreateMap<ListEntity, ListResponse>();

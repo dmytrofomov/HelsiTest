@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
-using DB;
 using HelsiTest.Infrastructure.DataAccess.Repositories.Implementations;
 using HelsiTest.Core.Services;
 using HelsiTest.Core.Services.Implementations;
 using HelsiTest.Core.Repositories;
 using HelsiTest.Api.Middleware;
 using HelsiTest.Infrastructure.DataAccess.DatabaseContext;
+using HelsiTest.Api;
 
 var builder = WebApplication.CreateBuilder(args);
 
