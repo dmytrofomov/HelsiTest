@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DomainProject\HelsiTest.Core.csproj" />
+    <ProjectReference Include="..\HelsiTest.Core\HelsiTest.Core.csproj" />
   </ItemGroup>
 
 </Project>

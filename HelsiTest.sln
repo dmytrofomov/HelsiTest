@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelsiTest.Api", "ApiProject\HelsiTest.Api.csproj", "{5AA557CB-809A-4D50-B295-395198C52E13}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelsiTest.Test", "Test\HelsiTest.Test.csproj", "{1D05624C-BC17-4EFE-BE8A-2763A37055E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelsiTest.Core", "DomainProject\HelsiTest.Core.csproj", "{17BD6515-CB76-4052-B0E3-E7FD7E4E4679}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelsiTest.Common", "HelsiTest.Common\HelsiTest.Common.csproj", "{54991B3B-7135-4A8B-8A87-22B6D16DC9EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelsiTest.Common", "HelsiTest.Common\HelsiTest.Common.csproj", "{54991B3B-7135-4A8B-8A87-22B6D16DC9EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelsiTest.DataAccess", "HelsiTest.DataAccess\HelsiTest.DataAccess.csproj", "{F2E22E9B-CA6B-4E96-97B3-F1F0344024A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelsiTest.DataAccess", "HelsiTest.DataAccess\HelsiTest.DataAccess.csproj", "{F2E22E9B-CA6B-4E96-97B3-F1F0344024A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelsiTest.Core", "HelsiTest.Core\HelsiTest.Core.csproj", "{C0F5D129-9C22-4D24-B2EA-778E7C50AF4F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelsiTest.Api", "HelsiTest.Api\HelsiTest.Api.csproj", "{F400F23E-4F8D-42A1-8587-1E2D57FF851B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,18 +19,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5AA557CB-809A-4D50-B295-395198C52E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5AA557CB-809A-4D50-B295-395198C52E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5AA557CB-809A-4D50-B295-395198C52E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5AA557CB-809A-4D50-B295-395198C52E13}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1D05624C-BC17-4EFE-BE8A-2763A37055E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1D05624C-BC17-4EFE-BE8A-2763A37055E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D05624C-BC17-4EFE-BE8A-2763A37055E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D05624C-BC17-4EFE-BE8A-2763A37055E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{17BD6515-CB76-4052-B0E3-E7FD7E4E4679}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17BD6515-CB76-4052-B0E3-E7FD7E4E4679}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17BD6515-CB76-4052-B0E3-E7FD7E4E4679}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17BD6515-CB76-4052-B0E3-E7FD7E4E4679}.Release|Any CPU.Build.0 = Release|Any CPU
 		{54991B3B-7135-4A8B-8A87-22B6D16DC9EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{54991B3B-7135-4A8B-8A87-22B6D16DC9EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54991B3B-7135-4A8B-8A87-22B6D16DC9EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +31,14 @@ Global
 		{F2E22E9B-CA6B-4E96-97B3-F1F0344024A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2E22E9B-CA6B-4E96-97B3-F1F0344024A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2E22E9B-CA6B-4E96-97B3-F1F0344024A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0F5D129-9C22-4D24-B2EA-778E7C50AF4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0F5D129-9C22-4D24-B2EA-778E7C50AF4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0F5D129-9C22-4D24-B2EA-778E7C50AF4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F5D129-9C22-4D24-B2EA-778E7C50AF4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F400F23E-4F8D-42A1-8587-1E2D57FF851B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F400F23E-4F8D-42A1-8587-1E2D57FF851B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F400F23E-4F8D-42A1-8587-1E2D57FF851B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F400F23E-4F8D-42A1-8587-1E2D57FF851B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
